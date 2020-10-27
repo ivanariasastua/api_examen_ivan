@@ -46,12 +46,6 @@ public class Distrito implements Serializable{
     @Column(length = 15)
     private String codigo;
     
-    @Column
-    private Integer poblacion;
-    
-    @Column
-    private Float area;
-    
     @ManyToOne 
     @JoinColumn(name="canton")
     private Canton canton;

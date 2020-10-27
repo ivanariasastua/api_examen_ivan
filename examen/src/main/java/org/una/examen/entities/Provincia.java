@@ -36,19 +36,13 @@ public class Provincia implements Serializable{
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
     
     @Column(length = 50)
     private String nombre;
     
     @Column(length = 15)
     private String codigo;
-    
-    @Column
-    private Integer poblacion;
-    
-    @Column
-    private Float area;
     
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "provincia")
     private List<Canton> cantones;

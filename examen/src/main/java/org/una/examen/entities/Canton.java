@@ -46,12 +46,6 @@ public class Canton implements Serializable{
     @Column(length = 15)
     private String codigo;
     
-    @Column
-    private Integer poblacion;
-    
-    @Column
-    private Float area;
-    
     @ManyToOne 
     @JoinColumn(name="provincia")
     private Provincia provincia;

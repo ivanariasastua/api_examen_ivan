@@ -49,7 +49,7 @@ public class Unidad {
     private Integer poblacion;
     
     @Column
-    private Float area;
+    private Double area;
     
     @ManyToOne 
     @JoinColumn(name="distrito")
