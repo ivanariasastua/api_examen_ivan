@@ -48,8 +48,8 @@ public class DistritoServiceImplementation implements IDistritoService{
 
     @Override
     @Transactional
-    public Optional<DistritoDTO> update(DistritoDTO distrito) {
-        if(repository.findById(distrito.getId()).isPresent()){
+    public Optional<DistritoDTO> update(DistritoDTO distrito, Long id) {
+        if(repository.findById(id).isPresent()){
             Distrito p = MapperUtils.EntityFromDto(distrito, Distrito.class);
             p = repository.save(p);
             return ServiceConvertionHelper.oneToOptionalDto(p, DistritoDTO.class);

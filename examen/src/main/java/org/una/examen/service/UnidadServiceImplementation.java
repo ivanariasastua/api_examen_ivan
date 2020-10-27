@@ -48,8 +48,8 @@ public class UnidadServiceImplementation implements IUnidadService{
 
     @Override
     @Transactional
-    public Optional<UnidadDTO> update(UnidadDTO unidad) {
-        if(repository.findById(unidad.getId()).isPresent()){
+    public Optional<UnidadDTO> update(UnidadDTO unidad, Long id) {
+        if(repository.findById(id).isPresent()){
             Unidad p = MapperUtils.EntityFromDto(unidad, Unidad.class);
             p = repository.save(p);
             return ServiceConvertionHelper.oneToOptionalDto(p, UnidadDTO.class);

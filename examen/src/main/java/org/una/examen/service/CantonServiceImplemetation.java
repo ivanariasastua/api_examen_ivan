@@ -48,8 +48,8 @@ public class CantonServiceImplemetation implements ICantonService{
 
     @Override
     @Transactional
-    public Optional<CantonDTO> update(CantonDTO canton) {
-        if(repository.findById(canton.getId()).isPresent()){
+    public Optional<CantonDTO> update(CantonDTO canton, Long id) {
+        if(repository.findById(id).isPresent()){
             Canton p = MapperUtils.EntityFromDto(canton, Canton.class);
             p = repository.save(p);
             return ServiceConvertionHelper.oneToOptionalDto(p, CantonDTO.class);

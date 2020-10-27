@@ -21,7 +21,7 @@ public interface IProvinciaService {
     
     public Optional<ProvinciaDTO> create(ProvinciaDTO provincia);
     
-    public Optional<ProvinciaDTO> update(ProvinciaDTO provincia);
+    public Optional<ProvinciaDTO> update(ProvinciaDTO provincia, Integer id);
     
     public void delete(Integer id);
 }

@@ -19,9 +19,9 @@ public interface IDistritoService {
     
     public Optional<List<DistritoDTO>> getByCodigo(String codigo);
     
-    public Optional<DistritoDTO> create(DistritoDTO canton);
+    public Optional<DistritoDTO> create(DistritoDTO distrito);
     
-    public Optional<DistritoDTO> update(DistritoDTO canton);
+    public Optional<DistritoDTO> update(DistritoDTO distrito, Long id);
     
     public void delete(Long id);
 }

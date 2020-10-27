@@ -47,8 +47,8 @@ public class ProvinciaServiceImplementation implements IProvinciaService{
 
     @Override
     @Transactional
-    public Optional<ProvinciaDTO> update(ProvinciaDTO provincia) {
-        if(repository.findById(provincia.getId()).isPresent()){
+    public Optional<ProvinciaDTO> update(ProvinciaDTO provincia, Integer id) {
+        if(repository.findById(id).isPresent()){
             Provincia p = MapperUtils.EntityFromDto(provincia, Provincia.class);
             p = repository.save(p);
             return ServiceConvertionHelper.oneToOptionalDto(p, ProvinciaDTO.class);
