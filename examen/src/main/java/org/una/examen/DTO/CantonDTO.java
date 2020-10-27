@@ -23,7 +23,7 @@ import lombok.ToString;
 @ToString
 public class CantonDTO {
     
-    private Integer id;
+    private Long id;
     private String nombre;
     private String codigo;
     @JsonBackReference

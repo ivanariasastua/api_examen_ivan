@@ -13,7 +13,7 @@ import org.una.examen.entities.Provincia;
  *
  * @author Ivan Josué Arias Astua
  */
-public interface IProvinciaRepository extends JpaRepository<Provincia, Long>{
+public interface IProvinciaRepository extends JpaRepository<Provincia, Integer>{
     
     List<Provincia> findByNombreContaining(String nombre);
     
