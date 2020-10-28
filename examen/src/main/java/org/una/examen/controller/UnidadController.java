@@ -33,7 +33,7 @@ public class UnidadController {
     @Autowired
     private IUnidadService service;
     
-    @GetMapping("/{nombre}")
+    @GetMapping("nombre/{nombre}")
     public ResponseEntity<?> getByNombre(@PathVariable("nombre")String nombre){
         try{
             return new ResponseEntity<>(service.getByNombre(nombre), HttpStatus.OK);
@@ -42,7 +42,7 @@ public class UnidadController {
         }
     }
     
-    @GetMapping("/{codigo}")
+    @GetMapping("codigo/{codigo}")
     public ResponseEntity<?> getByCodigo(@PathVariable("codigo")String codigo){
         try{
             return new ResponseEntity<>(service.getByCodigo(codigo), HttpStatus.OK);

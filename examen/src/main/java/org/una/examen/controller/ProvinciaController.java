@@ -15,8 +15,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
 import org.una.examen.DTO.ProvinciaDTO;
 import org.una.examen.service.IProvinciaService;
 
@@ -24,6 +26,8 @@ import org.una.examen.service.IProvinciaService;
  *
  * @author Ivan Josué Arias Astua
  */
+@RestController
+@RequestMapping("/provincia")
 public class ProvinciaController {
  
     @Autowired
@@ -38,7 +42,7 @@ public class ProvinciaController {
         }
     }
     
-    @GetMapping("/{nombre}")
+    @GetMapping("nombre/{nombre}")
     public ResponseEntity<?> getByNombre(@PathVariable("nombre")String nombre){
         try{
             return new ResponseEntity<>(service.getByNombre(nombre), HttpStatus.OK);
@@ -47,7 +51,7 @@ public class ProvinciaController {
         }
     }
     
-    @GetMapping("/{codigo}")
+    @GetMapping("codigo/{codigo}")
     public ResponseEntity<?> getByCodigo(@PathVariable("codigo")String codigo){
         try{
             return new ResponseEntity<>(service.getByCodigo(codigo), HttpStatus.OK);
