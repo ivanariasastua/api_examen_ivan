@@ -62,4 +62,9 @@ public class DistritoServiceImplementation implements IDistritoService{
     public void delete(Long id) {
         repository.deleteById(id);
     }
+
+    @Override
+    public Optional<List<DistritoDTO>> getByCanton(String canton) {
+        return ServiceConvertionHelper.findList(repository.findByCanton(canton), DistritoDTO.class);
+    }
 }

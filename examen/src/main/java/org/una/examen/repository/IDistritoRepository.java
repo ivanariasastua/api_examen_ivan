@@ -7,6 +7,8 @@ package org.una.examen.repository;
 
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.una.examen.entities.Distrito;
 
 /**
@@ -18,4 +20,7 @@ public interface IDistritoRepository extends JpaRepository<Distrito, Long>{
     List<Distrito> findByNombreContaining(String nombre);
     
     List<Distrito> findByCodigoContaining(String codigo);
+    
+    @Query("SELECT d FROM Distrito d WHERE UPPER(d.canton.nombre) LIKE CONCAT('%', :canton, '%')")
+    List<Distrito> findByCanton(@Param("canton")String canton);
 }

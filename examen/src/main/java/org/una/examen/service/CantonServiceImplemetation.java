@@ -62,4 +62,9 @@ public class CantonServiceImplemetation implements ICantonService{
     public void delete(Long id) {
         repository.deleteById(id);
     }
+
+    @Override
+    public Optional<List<CantonDTO>> getByProvincia(String provincia) {
+        return ServiceConvertionHelper.findList(repository.findByProvincia(provincia), CantonDTO.class);
+    }
 }

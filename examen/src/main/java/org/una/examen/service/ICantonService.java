@@ -19,6 +19,8 @@ public interface ICantonService {
     
     public Optional<List<CantonDTO>> getByCodigo(String codigo);
     
+    public Optional<List<CantonDTO>> getByProvincia(String provincia);
+    
     public Optional<CantonDTO> create(CantonDTO canton);
     
     public Optional<CantonDTO> update(CantonDTO canton, Long id);

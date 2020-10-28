@@ -8,6 +8,8 @@ package org.una.examen.repository;
 
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.una.examen.entities.Canton;
 
 
@@ -21,4 +23,7 @@ public interface ICantonRepository extends JpaRepository<Canton, Long>{
     List<Canton> findByNombreContaining(String nombre);
     
     List<Canton> findByCodigoContaining(String codigo);
+    
+    @Query("SELECT c FROM Canton c WHERE UPPER(c.provincia.nombre) LIKE CONCAT('%', :provincia, '%')")
+    List<Canton> findByProvincia(@Param("provincia")String provincia);
 }
