@@ -64,6 +64,7 @@ public class CantonServiceImplemetation implements ICantonService{
     }
 
     @Override
+    @Transactional(readOnly = true) 
     public Optional<List<CantonDTO>> getByProvincia(String provincia) {
         return ServiceConvertionHelper.findList(repository.findByProvincia(provincia), CantonDTO.class);
     }

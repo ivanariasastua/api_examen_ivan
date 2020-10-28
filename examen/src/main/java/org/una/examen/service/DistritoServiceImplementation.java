@@ -64,6 +64,7 @@ public class DistritoServiceImplementation implements IDistritoService{
     }
 
     @Override
+    @Transactional(readOnly = true) 
     public Optional<List<DistritoDTO>> getByCanton(String canton) {
         return ServiceConvertionHelper.findList(repository.findByCanton(canton), DistritoDTO.class);
     }

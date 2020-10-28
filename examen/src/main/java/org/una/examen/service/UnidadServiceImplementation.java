@@ -64,16 +64,19 @@ public class UnidadServiceImplementation implements IUnidadService{
     }
 
     @Override
+    @Transactional(readOnly = true) 
     public Optional<List<UnidadDTO>> getByDistrito(String distrito) {
         return ServiceConvertionHelper.findList(repository.findByDistrito(distrito), UnidadDTO.class);
     }
 
     @Override
+    @Transactional(readOnly = true) 
     public Optional<List<UnidadDTO>> getByPoblacion(Integer poblacion) {
         return ServiceConvertionHelper.findList(repository.findByPoblacion(poblacion), UnidadDTO.class);
     }
 
     @Override
+    @Transactional(readOnly = true) 
     public Optional<List<UnidadDTO>> getByArea(Double area) {
         return ServiceConvertionHelper.findList(repository.findByArea(area), UnidadDTO.class);
     }
