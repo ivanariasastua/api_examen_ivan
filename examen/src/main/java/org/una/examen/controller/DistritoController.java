@@ -51,6 +51,15 @@ public class DistritoController {
         }
     }
     
+    @GetMapping("canton/{canton}")
+    public ResponseEntity<?> getByProvincias(@PathVariable("canton")String canton){
+        try{
+            return new ResponseEntity<>(service.getByCanton(canton), HttpStatus.OK);
+        }catch(Exception ex){
+            return new ResponseEntity<>(ex, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+    
     @ResponseStatus(HttpStatus.OK)
     @PostMapping("/save")
     @ResponseBody

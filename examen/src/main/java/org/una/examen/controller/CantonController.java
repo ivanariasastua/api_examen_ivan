@@ -51,6 +51,15 @@ public class CantonController {
         }
     }
     
+    @GetMapping("provincia/{provincia}")
+    public ResponseEntity<?> getByProvincias(@PathVariable("provincia")String provincia){
+        try{
+            return new ResponseEntity<>(service.getByProvincia(provincia), HttpStatus.OK);
+        }catch(Exception ex){
+            return new ResponseEntity<>(ex, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+    
     @ResponseStatus(HttpStatus.OK)
     @PostMapping("/save")
     @ResponseBody
