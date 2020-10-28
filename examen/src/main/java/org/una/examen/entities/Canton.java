@@ -10,6 +10,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -50,6 +51,6 @@ public class Canton implements Serializable{
     @JoinColumn(name="provincia")
     private Provincia provincia;
     
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "canton")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "canton")
     private List<Distrito> distritos;
 }

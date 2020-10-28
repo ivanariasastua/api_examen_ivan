@@ -5,7 +5,6 @@
  */
 package org.una.examen.DTO;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,13 +18,10 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class UnidadDTO {
+public class DistrictDTO {
     
     private Long id;
     private String nombre;
     private String codigo;
-    private Integer poblacion;
-    private Double area;
-    private DistrictDTO distrito;
-    
+    private CantomDTO canton;
 }

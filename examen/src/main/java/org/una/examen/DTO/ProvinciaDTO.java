@@ -5,7 +5,7 @@
  */
 package org.una.examen.DTO;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,7 +25,6 @@ public class ProvinciaDTO {
     private Integer id;
     private String nombre;
     private String codigo;
-    @JsonManagedReference
     private List<CantonDTO> cantones;
     
 }

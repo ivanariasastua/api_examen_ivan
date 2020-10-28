@@ -26,8 +26,6 @@ public class DistritoDTO {
     private Long id;
     private String nombre;
     private String codigo;
-    @JsonBackReference
-    private CantonDTO canton;
-    @JsonManagedReference
+    private CantomDTO canton;
     private List<UnidadDTO> unidades;
 }
