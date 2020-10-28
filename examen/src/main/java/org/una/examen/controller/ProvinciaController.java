@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.una.examen.DTO.ProvinciaDTO;
-import org.una.examen.service.ICantonService;
 import org.una.examen.service.IProvinciaService;
 
 /**
