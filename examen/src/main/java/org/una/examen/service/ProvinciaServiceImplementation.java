@@ -61,5 +61,11 @@ public class ProvinciaServiceImplementation implements IProvinciaService{
     public void delete(Integer id) {
         repository.deleteById(id);
     }
+
+    @Override
+    @Transactional(readOnly = true) 
+    public Optional<List<ProvinciaDTO>> getAll() {
+        return ServiceConvertionHelper.findList(repository.findAll(), ProvinciaDTO.class);
+    }
     
 }

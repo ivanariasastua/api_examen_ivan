@@ -30,6 +30,15 @@ public class ProvinciaController {
     @Autowired
     private IProvinciaService service;
     
+    @GetMapping("/")
+    public ResponseEntity<?> getAll(){
+        try{
+            return new ResponseEntity<>(service.getAll(), HttpStatus.OK);
+        }catch(Exception ex){
+            return new ResponseEntity<>(ex, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+    
     @GetMapping("/{nombre}")
     public ResponseEntity<?> getByNombre(@PathVariable("nombre")String nombre){
         try{

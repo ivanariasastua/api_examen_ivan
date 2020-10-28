@@ -15,6 +15,8 @@ import org.una.examen.DTO.ProvinciaDTO;
  */
 public interface IProvinciaService {
     
+    public Optional<List<ProvinciaDTO>> getAll();
+    
     public Optional<List<ProvinciaDTO>> getByNombre(String nombre);
     
     public Optional<List<ProvinciaDTO>> getByCodigo(String codigo);
