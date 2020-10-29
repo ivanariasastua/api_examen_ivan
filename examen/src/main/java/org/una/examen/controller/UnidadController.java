@@ -51,6 +51,15 @@ public class UnidadController {
         }
     }
     
+    @GetMapping("tipo/{tipo}")
+    public ResponseEntity<?> getByTipo(@PathVariable("tipo")String tipo){
+        try{
+            return new ResponseEntity<>(service.getByTipo(tipo), HttpStatus.OK);
+        }catch(Exception ex){
+            return new ResponseEntity<>(ex, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+    
     @GetMapping("distrito/{distrito}")
     public ResponseEntity<?> getByDistrito(@PathVariable("distrito")String distrito){
         try{

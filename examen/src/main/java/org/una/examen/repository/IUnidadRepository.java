@@ -21,6 +21,8 @@ public interface IUnidadRepository extends JpaRepository<Unidad, Long>{
     
     List<Unidad> findByCodigoContaining(String codigo);
     
+    List<Unidad> findByTipo(String tipo);
+    
     @Query("SELECT u FROM Unidad u WHERE UPPER(u.distrito.nombre) LIKE CONCAT('%', :distrito, '%')")
     List<Unidad> findByDistrito(@Param("distrito")String distrito);
     

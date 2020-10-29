@@ -19,6 +19,8 @@ public interface IUnidadService {
     
     public Optional<List<UnidadDTO>> getByCodigo(String codigo);
     
+    public Optional<List<UnidadDTO>> getByTipo(String tipo);
+    
     public Optional<List<UnidadDTO>> getByDistrito(String distrito);
     
     public Optional<List<UnidadDTO>> getByPoblacion(Integer poblacion);

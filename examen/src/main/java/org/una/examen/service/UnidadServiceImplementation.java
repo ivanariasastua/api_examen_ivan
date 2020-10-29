@@ -80,4 +80,9 @@ public class UnidadServiceImplementation implements IUnidadService{
     public Optional<List<UnidadDTO>> getByArea(Double area) {
         return ServiceConvertionHelper.findList(repository.findByArea(area), UnidadDTO.class);
     }
+
+    @Override
+    public Optional<List<UnidadDTO>> getByTipo(String tipo) {
+        return ServiceConvertionHelper.findList(repository.findByTipo(tipo), UnidadDTO.class);
+    }
 }
