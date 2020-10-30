@@ -60,6 +60,24 @@ public class DistritoController {
         }
     }
     
+    @GetMapping("poblacion/{poblacion}")
+    public ResponseEntity<?> getByPoblacion(@PathVariable("poblacion")Integer poblacion){
+        try{
+            return new ResponseEntity<>(service.getByPoblacion(poblacion), HttpStatus.OK);
+        }catch(Exception ex){
+            return new ResponseEntity<>(ex, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+    
+    @GetMapping("area/{area}")
+    public ResponseEntity<?> getByArea(@PathVariable("area")Double area){
+        try{
+            return new ResponseEntity<>(service.getByArea(area), HttpStatus.OK);
+        }catch(Exception ex){
+            return new ResponseEntity<>(ex, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+    
     @ResponseStatus(HttpStatus.OK)
     @PostMapping("/save")
     @ResponseBody

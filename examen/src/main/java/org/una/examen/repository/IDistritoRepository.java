@@ -23,4 +23,10 @@ public interface IDistritoRepository extends JpaRepository<Distrito, Long>{
     
     @Query("SELECT d FROM Distrito d WHERE UPPER(d.canton.nombre) LIKE CONCAT('%', :canton, '%')")
     List<Distrito> findByCanton(@Param("canton")String canton);
+    
+    @Query("SELECT u FROM Distrito u WHERE u.poblacion >= :poblacion")
+    List<Distrito> findByPoblacion(@Param("poblacion")Integer poblacion);
+    
+    @Query("SELECT u FROM Distrito u WHERE u.area >= :area")
+    List<Distrito> findByArea(@Param("area")Double area);
 }

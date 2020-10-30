@@ -25,8 +25,6 @@ public class UnidadDTO {
     private String nombre;
     private String codigo;
     private String tipo;
-    private Integer poblacion;
-    private Double area;
     private DistrictDTO distrito;
     
 }

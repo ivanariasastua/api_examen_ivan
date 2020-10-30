@@ -25,10 +25,4 @@ public interface IUnidadRepository extends JpaRepository<Unidad, Long>{
     
     @Query("SELECT u FROM Unidad u WHERE UPPER(u.distrito.nombre) LIKE CONCAT('%', :distrito, '%')")
     List<Unidad> findByDistrito(@Param("distrito")String distrito);
-    
-    @Query("SELECT u FROM Unidad u WHERE u.poblacion >= :poblacion")
-    List<Unidad> findByPoblacion(@Param("poblacion")Integer poblacion);
-    
-    @Query("SELECT u FROM Unidad u WHERE u.area >= :area")
-    List<Unidad> findByArea(@Param("area")Double area);
 }

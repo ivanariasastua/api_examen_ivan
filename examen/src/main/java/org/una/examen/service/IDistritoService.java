@@ -25,5 +25,9 @@ public interface IDistritoService {
     
     public Optional<DistritoDTO> update(DistritoDTO distrito, Long id);
     
+    public Optional<List<DistritoDTO>> getByPoblacion(Integer poblacion);
+    
+    public Optional<List<DistritoDTO>> getByArea(Double area);
+    
     public void delete(Long id);
 }

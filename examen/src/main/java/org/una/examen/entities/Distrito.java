@@ -51,6 +51,12 @@ public class Distrito implements Serializable{
     @JoinColumn(name="canton")
     private Canton canton;
     
+    @Column
+    private Integer poblacion;
+    
+    @Column
+    private Double area;
+    
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "distrito")
     private List<Unidad> unidades;
 }

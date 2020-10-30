@@ -23,10 +23,6 @@ public interface IUnidadService {
     
     public Optional<List<UnidadDTO>> getByDistrito(String distrito);
     
-    public Optional<List<UnidadDTO>> getByPoblacion(Integer poblacion);
-    
-    public Optional<List<UnidadDTO>> getByArea(Double area);
-    
     public Optional<UnidadDTO> create(UnidadDTO unidad);
     
     public Optional<UnidadDTO> update(UnidadDTO unidad, Long id);

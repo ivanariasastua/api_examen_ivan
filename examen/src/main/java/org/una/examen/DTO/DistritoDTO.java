@@ -5,8 +5,6 @@
  */
 package org.una.examen.DTO;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -27,5 +25,7 @@ public class DistritoDTO {
     private String nombre;
     private String codigo;
     private CantomDTO canton;
+    private Integer poblacion;
+    private Double area;
     private List<UnidadDTO> unidades;
 }

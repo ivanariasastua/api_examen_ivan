@@ -45,12 +45,6 @@ public class Unidad {
     @Column(length = 15)
     private String tipo;
     
-    @Column
-    private Integer poblacion;
-    
-    @Column
-    private Double area;
-    
     @ManyToOne 
     @JoinColumn(name="distrito")
     private Distrito distrito;

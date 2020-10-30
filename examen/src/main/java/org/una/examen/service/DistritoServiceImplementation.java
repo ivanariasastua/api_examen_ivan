@@ -68,4 +68,16 @@ public class DistritoServiceImplementation implements IDistritoService{
     public Optional<List<DistritoDTO>> getByCanton(String canton) {
         return ServiceConvertionHelper.findList(repository.findByCanton(canton), DistritoDTO.class);
     }
+    
+    @Override
+    @Transactional(readOnly = true) 
+    public Optional<List<DistritoDTO>> getByPoblacion(Integer poblacion) {
+        return ServiceConvertionHelper.findList(repository.findByPoblacion(poblacion), DistritoDTO.class);
+    }
+
+    @Override
+    @Transactional(readOnly = true) 
+    public Optional<List<DistritoDTO>> getByArea(Double area) {
+        return ServiceConvertionHelper.findList(repository.findByArea(area), DistritoDTO.class);
+    }
 }

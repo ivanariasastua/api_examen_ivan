@@ -23,5 +23,7 @@ public class DistrictDTO {
     private Long id;
     private String nombre;
     private String codigo;
+    private Integer poblacion;
+    private Double area;
     private CantomDTO canton;
 }
